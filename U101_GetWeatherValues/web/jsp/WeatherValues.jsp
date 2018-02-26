@@ -1,9 +1,3 @@
-<%-- 
-    Document   : WeatherValues
-    Created on : Feb 26, 2018, 11:44:27 AM
-    Author     : Stefan Högler
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

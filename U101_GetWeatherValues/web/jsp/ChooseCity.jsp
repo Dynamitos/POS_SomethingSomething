@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ChooseCity
-    Created on : Feb 26, 2018, 11:43:52 AM
-    Author     : Stefan Högler
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
