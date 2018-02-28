@@ -9,14 +9,14 @@
     </head>
     <body>
         <h1>Enter your city</h1>
-        <form method="GET" action="">
+        <form method="GET" action="ChooseCity">
             <table>
                 <tr>
                     <td>
                         <h2>City:</h2>
                     </td>
                     <td>
-                        <input type="text"/>
+                        <input name="city" type="text"/>
                     </td>
                 </tr>
                 <tr>
