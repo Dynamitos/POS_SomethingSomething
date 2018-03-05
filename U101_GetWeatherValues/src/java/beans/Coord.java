@@ -11,11 +11,11 @@ public class Coord {
     public float getLon() {
         return lon;
     }
-    @XmlAttribute(name="lat")
     public void setLon(float lon) {
         this.lon = lon;
     }
 
+    @XmlAttribute(name="lat")
     public float getLat() {
         return lat;
     }

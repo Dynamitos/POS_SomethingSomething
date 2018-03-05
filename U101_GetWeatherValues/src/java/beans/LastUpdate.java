@@ -6,7 +6,10 @@
 package beans;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  *
@@ -19,10 +22,17 @@ public class LastUpdate {
     }
 
     @XmlAttribute(name="value")
+    @XmlJavaTypeAdapter(DateAdapter.class)
     public LocalDateTime getValue() {
         return value;
     }
-
+    
+    @XmlTransient
+    public String getFormattedDate()
+    {
+        return value.format(DateTimeFormatter.ofPattern("dd.MM.YYYY"));
+    }
+    
     public void setValue(LocalDateTime value) {
         this.value = value;
     }

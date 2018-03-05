@@ -1,9 +1,14 @@
 package beans;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 public class Temperature {
 
+    @XmlType
+    @XmlEnum(String.class)
     public static enum UnitEnum {
         KELVIN("kelvin"),
         CELSIUS("celsius");
@@ -61,5 +66,10 @@ public class Temperature {
     public void setUnit(UnitEnum unit) {
         this.unit = unit;
     }
-
+    
+    @XmlTransient
+    public String getFormattedValue()
+    {
+        return (unit==UnitEnum.KELVIN) ? (value+" / ") : (" / "+value);
+    }
 }

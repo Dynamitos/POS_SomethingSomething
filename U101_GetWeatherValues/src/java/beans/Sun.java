@@ -7,6 +7,7 @@ package beans;
 
 import java.time.LocalDateTime;
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Sun {
     public Sun() {
     }
     @XmlAttribute(name="rise")
+    @XmlJavaTypeAdapter(DateAdapter.class)
     public LocalDateTime getRise() {
         return rise;
     }
@@ -27,6 +29,7 @@ public class Sun {
     }
 
     @XmlAttribute(name="set")
+    @XmlJavaTypeAdapter(DateAdapter.class)
     public LocalDateTime getSet() {
         return set;
     }

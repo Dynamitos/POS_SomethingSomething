@@ -31,7 +31,7 @@ public class XmlAccess {
     public CurrentRoot getRootFromCityName(String cityName) {
         CurrentRoot root = null;
         try {
-            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + APP_ID);
+            URL url = new URL("http://api.openweathermap.org/data/2.5/weather?mode=xml&q=" + cityName + APP_ID);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             JAXBContext context = JAXBContext.newInstance(CurrentRoot.class);

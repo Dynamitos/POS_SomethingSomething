@@ -1,11 +1,13 @@
 package servlets;
 
+import beans.CurrentRoot;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import resources.ResourceEnum;
 import xml.XmlAccess;
 
 public class ChooseCity extends HttpServlet {
@@ -21,9 +23,20 @@ public class ChooseCity extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        request.setAttribute("root", XmlAccess.getInstance().getRootFromCityName(request.getParameter("city")));
-        request.getRequestDispatcher("/jsp/WeatherValues.jsp").forward(request, response);
+        String result;
+        String city = request.getParameter("city");
+        if(city == null || city.isEmpty())
+        {
+            result = ResourceEnum.EXCEPTIONHANDLER.getName();
+        }
+        else
+        {
+            result = ResourceEnum.WEATHERVALUES.getName();
+            CurrentRoot root = XmlAccess.getInstance().getRootFromCityName(city);
+            request.setAttribute("Root", root);
+        }
+        System.out.println("Forwarding to: "+result);
+        request.getRequestDispatcher(result).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

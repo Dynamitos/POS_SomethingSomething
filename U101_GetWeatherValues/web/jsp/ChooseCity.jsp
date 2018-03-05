@@ -1,3 +1,5 @@
+<%@page import="resources.ServletEnum"%>
+<%@page import="resources.ResourceEnum"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,7 +11,7 @@
     </head>
     <body>
         <h1>Enter your city</h1>
-        <form method="GET" action="${pageContext.request.contextPath}/ChooseCity">
+        <form method="GET" action="${pageContext.request.contextPath}<%=ServletEnum.CHOOSECITY.getUrlPattern()%>">
             <table>
                 <tr>
                     <td>
