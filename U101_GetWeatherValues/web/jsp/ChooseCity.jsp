@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>Enter your city</h1>
-        <form method="GET" action="ChooseCity">
+        <form method="GET" action="${pageContext.request.contextPath}/ChooseCity">
             <table>
                 <tr>
                     <td>
